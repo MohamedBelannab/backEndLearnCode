@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MasterController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/quiz', function () {
+    return view('quiz');
+});
+Route::get('/tables', function () {
+    return view('layouts/tables');
+});
+Route::get('/quiz', [MasterController::class, 'methodeQuiz'])->name("quiz");
+// Route::post('', [MasterController::class, 'store']);
+
+Route::get('/langage', [MasterController::class, 'methodelangage'])->name('langage');
+Route::post('/admin/langage/store', [MasterController::class, 'store']);
+
