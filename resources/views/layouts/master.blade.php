@@ -40,7 +40,7 @@
   <!-- Content Wrapper. Contains page content -->
   @yield('Content')
 
-  @extends('layouts.footer');
+  @extends('layouts.footer')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->

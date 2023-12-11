@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
+use App\Models\Language;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +44,13 @@ Route::post('quizzes', [QuizzesController::class, 'addQuiz']);
 
 
 });
+
+Route::group(['middleware'=>['auth:sanctum']],function(){
+   
+    
+});
+
+Route::post('/removeLanguage/{id}/{titre}' , [LanguageController::class  , 'removeLanguage']);
+
+
+Route::get('/getAllLanguages' ,[LanguageController::class , 'getAllLanguages']);

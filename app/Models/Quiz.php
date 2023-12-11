@@ -14,4 +14,8 @@ class Quiz extends Model
     {
         return $this->belongsTo(Language::class, 'idLangage');
     }
+
+
+
+
 }

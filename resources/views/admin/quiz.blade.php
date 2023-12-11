@@ -23,7 +23,10 @@ Page_Langage
 @section('Content')
 <!-- Button to trigger the modal -->
 <!-- Button to trigger the modal with modified margin -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 10px; margin-right: 10px;">
+<h1  style="margin-bottom: 10px; margin-right: 10px;   margin-left: 20px;" >Liste De Quiz</h1>
+
+<hr>
+<button type="button"   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 10px; margin-right: 10px;   margin-left: 20px;"  >
   Add Quiz
 </button>
 
@@ -40,7 +43,7 @@ Page_Langage
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-        <form action="" method="post">
+        <form action="/admin/quiz/store" method="post">
     @csrf
     <div class="form-group">
         <label for="description">Description:</label>
@@ -74,33 +77,43 @@ Page_Langage
     </div>
   </div>
 </div>
+
+
 <section class="content">
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">DataTable with minimal features & hover style</h3>
+          <h3 class="card-title">DataTable Langages</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
           <table id="example2" class="table table-bordered table-hover">
+
             <thead>
               <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
+                <th>ID Quiz</th>
+                <th>ID Langages</th>
+                <th>Description</th>
+                <th>Titre</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
+            @foreach($Quizes as $index =>$q)
               <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 4.0</td>
-                <td>Win 95+</td>
-                <td>4</td>
-                <td>X</td>
+                <td>{{$q->id}}</td>
+                <td>{{$q->idLangage}}</td>
+                <td>{{$q->description}}</td>
+                <td>{{$q->titre}}</td>
+                <td>
+                  
+                <a href="{{url('editquiz/'.$q->id)}}" class="btn btn-success" style="margin-right: 10px; margin-bottom: 10px;">Modifier</a>
+                <a onclick="return confirm('vouler-vous vrament suprimer cette quiz')" href="/admin/quiz/{{$q->id}}/delet" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
+
+                </td>
               </tr>
-            
+            @endforeach
               <!-- Add more rows as needed -->
             </tbody>
           </table>
@@ -114,7 +127,6 @@ Page_Langage
   <!-- /.row -->
 </section>
 <!-- /.content -->
-
 
 
 @endsection

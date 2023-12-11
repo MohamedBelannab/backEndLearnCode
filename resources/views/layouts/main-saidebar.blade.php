@@ -37,18 +37,24 @@
                 </a>
               </li>
               <li class="nav-item">
+              <a href="{{ route('question') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Questions</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('quiz') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Quiz</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{ route('blogs') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Blogs</p>
                 </a>
               </li>
-
             </ul>
           </li>
           

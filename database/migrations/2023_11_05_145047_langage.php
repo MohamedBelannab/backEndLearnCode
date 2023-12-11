@@ -14,7 +14,13 @@ return new class extends Migration
         Schema::create('langages', function (Blueprint $table) {
             $table->id();
             $table->text('description');
+            $table->text('WhyLearn');
+            $table->text('example');
+            $table->text('Applications');
+            $table->text('Guide');
+            $table->text('frameworks');
             $table->string('titre');
+            $table->string('img');
             $table->timestamps();
         });
     }
