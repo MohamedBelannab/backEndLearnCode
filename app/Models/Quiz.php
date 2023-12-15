@@ -15,7 +15,9 @@ class Quiz extends Model
         return $this->belongsTo(Language::class, 'idLangage');
     }
 
-
-
+    public function userResults()
+    {
+        return $this->hasMany(userresults::class, 'idQuiz');
+    }
 
 }

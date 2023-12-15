@@ -17,17 +17,17 @@
 
 
 @section('title_page2')
-Page_Quiz
+Page_Likes
 @endsection
 
 @section('Content')
 <!-- Button to trigger the modal -->
 <!-- Button to trigger the modal with modified margin -->
-<h1  style="margin-bottom: 10px; margin-right: 10px;   margin-left: 20px;" >Liste De Quiz</h1>
+<h1  style="margin-bottom: 10px; margin-right: 10px;   margin-left: 20px;" >Liste De Likes</h1>
 
 <hr>
 <button type="button"   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 10px; margin-right: 10px;   margin-left: 20px;"  >
-  Add Quiz
+  Add Likes
 </button>
 
 
@@ -36,35 +36,30 @@ Page_Quiz
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal Quiz</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modal Likes</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-        <form action="/admin/quiz/store" method="post">
+        <form action="admin/likes/store" method="post">
     @csrf
     <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
-        @error('description')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="titre">Titre:</label>
-        <input name="titre" type="text" class="form-control" id="titre" placeholder="Enter Title">
-        @error('titre')
+        <label for="idBlog">IdBlog:</label>
+        <input name="idBlog" type="number" class="form-control" id="idBlog" placeholder="Enter idBlog">
+        @error('idBlog')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 
     <div class="form-group">
-    <label for="idLangage">ID Language:</label>
-    <input name="idLangage" type="text" class="form-control" id="idLangage" placeholder="Enter Language ID">
-</div>
-
+        <label for="idBlog">Number:</label>
+        <input name="number" type="number" class="form-control" id="number" placeholder="Enter number">
+        @error('number')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
@@ -84,7 +79,7 @@ Page_Quiz
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">DataTable Langages</h3>
+          <h3 class="card-title">DataTable Likes</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -92,24 +87,20 @@ Page_Quiz
 
             <thead>
               <tr>
-                <th>ID Quiz</th>
-                <th>ID Langages</th>
-                <th>Description</th>
-                <th>Titre</th>
+                <th>Id_Blogs</th>
+                <th>Number</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-            @foreach($Quizes as $index =>$q)
+            @foreach($likes as $index =>$li)
               <tr>
-                <td>{{$q->id}}</td>
-                <td>{{$q->idLangage}}</td>
-                <td>{{$q->description}}</td>
-                <td>{{$q->titre}}</td>
+                <td>{{$li->idBlog}}</td>
+                <td>{{$li->number}}</td>
                 <td>
-                  
-                <a href="{{url('editquiz/'.$q->id)}}" class="btn btn-success" style="margin-right: 10px; margin-bottom: 10px;">Modifier</a>
-                <a onclick="return confirm('vouler-vous vrament suprimer cette quiz')" href="/admin/quiz/{{$q->id}}/delet" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
+      
+                <a href="{{url('editlikes/'.$li->id)}}" class="btn btn-success" style="margin-right: 10px; margin-bottom: 10px;">Modifier</a>
+                <a onclick="return confirm('vouler-vous vrament suprimer cette likes')" href="/admin/likes/{{$li->id}}/delete" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
 
                 </td>
               </tr>

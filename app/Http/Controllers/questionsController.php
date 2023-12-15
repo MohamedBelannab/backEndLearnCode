@@ -28,6 +28,18 @@ class questionsController extends Controller
         return redirect()->back()->with('success', 'Question added successfully');
     }
 
+    public function edit($id){
+        $questions=questions::find($id);
+        return view("admin/editquestions",compact("questions"));
+       
+    }
+    public function update(Request $request,$id){
+        $questions=questions::find($id);
+        $questions->idQuiz=$request->idQuiz;
+        $questions->bodyQuestion=$request->bodyQuestion;
+        $questions->update();
+        return redirect("/question")->with("status","Data updated successfully");
+    } 
 
     public function removeQuestion($id ){
         $questions = questions::find($id);

@@ -17,7 +17,7 @@
 
 
 @section('title_page2')
-Page_Langage
+Page_Question
 @endsection
 
 @section('Content')
@@ -96,7 +96,7 @@ Page_Langage
                 <td>{{$que->idQuiz}}</td>
                 <td>{{$que->bodyQuestion}}</td>
                 <td>
-                <a href="#" class="btn btn-success" style="margin-right: 10px; margin-bottom: 10px;">Modifier</a>
+                <a href="{{url('editquestions/'.$que->id)}}" class="btn btn-success" style="margin-right: 10px;  margin-bottom: 10px;">Modifier</a>
                 <a onclick="return confirm('vouler-vous vrament suprimer cette Question')" href="/admin/question/{{$que->id}}/delete" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
                        
                 </td>

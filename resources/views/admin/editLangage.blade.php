@@ -17,7 +17,7 @@
 
 
 @section('title_page2')
-Page_Langage
+<a href="{{ url('/langage') }}">Page_Langages</a>
 @endsection
 
 @section('Content')
@@ -39,13 +39,51 @@ Modifier Langages
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-    <form action="{{url('update-data/'.$language->id)}}" method="post">
+    <form action="{{url('update-data/'.$language->id)}}" method="post" enctype="multipart/form-data">
     @csrf
-    @method("PUT")
+    {{ csrf_field() }}
+    {{method_field('PUT')}}
+    <!-- @method("PUT") -->
     <div class="form-group">
         <label for="description">Description:</label>
         <textarea  value="{{$language->description}}" name="description" class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
         <!-- @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror -->
+    </div>
+    <div class="form-group">
+        <label for="titre">WhyLearn:</label>
+        <input value="{{$language->WhyLearn}}" name="WhyLearn" type="text" class="form-control" id="titre" placeholder="Enter WhyLearn">
+        <!-- @error('titre')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror -->
+    </div>
+    <div class="form-group">
+        <label for="titre">example:</label>
+        <input value="{{$language->example}}" name="example" type="text" class="form-control" id="titre" placeholder="Enter example">
+        <!-- @error('titre')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror -->
+    </div>
+
+    <div class="form-group">
+        <label for="titre">Applications:</label>
+        <input value="{{$language->Applications}}" name="Applications" type="text" class="form-control" id="titre" placeholder="Enter Applications">
+        <!-- @error('titre')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror -->
+    </div>
+    <div class="form-group">
+        <label for="titre">Guide:</label>
+        <input value="{{$language->Guide}}" name="Guide" type="Guide" class="form-control" id="titre" placeholder="Enter Guide">
+        <!-- @error('titre')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror -->
+    </div>
+    <div class="form-group">
+        <label for="titre">frameworks:</label>
+        <input value="{{$language->frameworks}}" name="frameworks" type="text" class="form-control" id="titre" placeholder="Enter frameworks">
+        <!-- @error('titre')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror -->
     </div>
@@ -56,6 +94,16 @@ Modifier Langages
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror -->
     </div>
+
+    <div class="form-group">
+    <label for="img">Image:</label>
+    <input value="{{$language->img}}" type="file" id="img" name="img" class="form-control">
+
+        @error('img')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">modifer </button>

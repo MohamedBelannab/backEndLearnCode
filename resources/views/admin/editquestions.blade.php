@@ -17,52 +17,48 @@
 
 
 @section('title_page2')
-<a href="{{ url('/quiz') }}">Page_Quiz</a>
+<a href="{{ url('/question') }}">Page_Question</a>
 @endsection
 
 @section('Content')
 
 
 <button type="button"   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 10px; margin-right: 10px;   margin-left: 20px;"  >
-Modifier Quiz
+Modifier Question
 </button>
-
 
 <!-- Modal structure with a form -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal Quiz</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modal Question</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-        <form action="{{url('update-data-quiz/'.$quiz->id)}}" method="post">        
+        <form action="{{url('update-data-questions/'.$questions->id)}}" method="post">      
     @csrf
     @method("PUT")
     <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea value="{{$quiz->description}}" name="description" class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
-        @error('description')
+        <label for="idQuiz">idQuiz:</label>
+        <input  value="{{$questions->idQuiz}}" name="idQuiz" type="text" class="form-control" id="idQuiz" placeholder="Enter idQuiz">
+        @error('idQuiz')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-group">
-        <label for="titre">Titre:</label>
-        <input value="{{$quiz->titre}}" name="titre" type="text" class="form-control" id="titre" placeholder="Enter Title">
-        @error('titre')
+        <label for="idQuiz">bodyQuestion:</label>
+        <input  value="{{$questions->bodyQuestion}}" name="bodyQuestion" type="text" class="form-control" id="idQuiz" placeholder="Enter bodyQuestion">
+        @error('bodyQuestion')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 
-    <div class="form-group">
-    <label for="idLangage">ID Language:</label>
-    <input  value="{{$quiz->idLangage}}" name="idLangage" type="text" class="form-control" id="idLangage" placeholder="Enter Language ID">
-</div>
 
+ 
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">modifer</button>

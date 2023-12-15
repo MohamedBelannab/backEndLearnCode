@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blogs extends Model
+class likes extends Model
 {
     use HasFactory;
-    protected $guarded = [];
-    protected $table = 'blogs' ;
+    public function Likes()
+    {
+        return $this->belongsTo(Blogs::class, 'idBlog');
+    }
 }

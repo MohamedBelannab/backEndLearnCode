@@ -29,13 +29,28 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{ route('langage') }}" class="nav-link active">
+            
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book" style="color: yellow;"></i>
+           
+              <p>
+              Gestion des cours
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="{{ route('langage') }}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Language </p>
                 </a>
               </li>
+
               <li class="nav-item">
               <a href="{{ route('question') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -50,14 +65,86 @@
               </li>
 
               <li class="nav-item">
+                <a href="{{ route('anserwers') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Anserwers</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+      
+       
+         
+        
+
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-edit"  style="color: yellow;"></i>
+            <!-- <i class="fas fa-check nav-icon"></i> -->
+              <p>
+              Gestion des utilisateurs
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            
+            <li class="nav-item">
+                <a href="{{ route('extrauser') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Extrauser</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('userresults') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User_results</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ route('users') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Users</p>
+                </a>
+              </li>
+       
+         
+            </ul>
+          </li>
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-edit" style="color: yellow;"></i>
+
+              <p>Gestion de la publication 
+              <!-- <i class="fas fa-angle-left right"></i> -->
+              </p>
+              
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
                 <a href="{{ route('blogs') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Blogs</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{ route('likes') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Likes</p>
+                </a>
+              </li>
+
+
+        
+         
             </ul>
           </li>
-          
+            
           <!-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

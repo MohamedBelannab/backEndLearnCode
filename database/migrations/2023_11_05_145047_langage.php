@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('Guide');
             $table->text('frameworks');
             $table->string('titre');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

@@ -40,22 +40,69 @@ Page_Langage
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-    <form action="/admin/langage/store" method="post">
+    <form action="/admin/langage/store" method="post" enctype="multipart/form-data">
     @csrf
+    {{ csrf_field() }}
     <div class="form-group">
         <label for="description">Description:</label>
         <textarea name="description" class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
-        <!-- @error('description')
+        @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
     <div class="form-group">
         <label for="titre">Titre:</label>
         <input name="titre" type="text" class="form-control" id="titre" placeholder="Enter Title">
-        <!-- @error('titre')
+        @error('titre')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
+    <div class="form-group">
+        <label for="WhyLearn">WhyLearn:</label>
+        <input name="WhyLearn" type="text" class="form-control" id="WhyLearn" placeholder="Enter WhyLearn">
+        @error('WhyLearn')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="form-group">
+        <label for="Example">Example:</label>
+        <input name="example" type="text" class="form-control" id="example" placeholder="Enter example">
+        @error('example')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="form-group">
+        <label for="Applications">Applications:</label>
+        <input name="Applications" type="text" class="form-control" id="Applications" placeholder="Enter Applications">
+        @error('Applications')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="form-group">
+        <label for="Guide">Guide:</label>
+        <input name="Guide" type="text" class="form-control" id="Guide" placeholder="Enter Guide">
+        @error('Guide')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="form-group">
+        <label for="frameworks">frameworks:</label>
+        <input name="frameworks" type="text" class="form-control" id="frameworks" placeholder="Enter frameworks">
+        @error('frameworks')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+    <label for="img">Image:</label>
+    <input type="file" id="img" name="img" class="form-control">
+
+        @error('img')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+
 
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -84,6 +131,12 @@ Page_Langage
                 <th>ID </th> -->
                 <th>Titre</th>
                 <th>Description</th>
+                <th>WhyLearn</th>
+                <th>example</th>
+                <th>Applications</th>
+                <th>Guide</th>
+                <th>Frameworks</th>
+                <th>img</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -94,9 +147,16 @@ Page_Langage
                 <td>{{$La->id}}</td> -->
                 <td>{{$La->titre}}</td>
                 <td>{{$La->description}}</td>
+                <td>{{$La->WhyLearn}}</td>
+                <td>{{$La->example}}</td>
+                <td>{{$La->Applications}}</td>
+                <td>{{$La->Guide}}</td>
+                <td>{{$La->frameworks}}</td>
+                <td> 
+                <img src="{{ asset('uploads/langage/' . $La->img) }}" alt="Post Image" style="width: 70px; height: auto;">
+                </td>
                 <td>
                 <a href="{{url('edit/'.$La->id)}}" class="btn btn-success" style="margin-right: 10px;  margin-bottom: 10px;">Modifier</a>
-      
                 <a onclick="return confirm('vouler-vous vrament suprimer cette langauge')" href="/admin/langage/{{$La->id}}/delet" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
 
                 </td>
