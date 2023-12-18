@@ -27,11 +27,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/quiz', function () {
-    return view('quiz');
+Route::get('/quizs', function () {
+    return view('quizs');
 });
 Route::get('/tables', function () {
-    return view('layouts/tables');
+    return view('/tables');
 });
 // Route::post('', [MasterController::class, 'store']);
 
@@ -82,7 +82,7 @@ Route::post('/admin/users/store', [UsersController::class, 'store']);
 Route::get('/admin/users/{id}/delete', [UsersController::class, 'removusers']);
 Route::get('/editusers/{id}', [UsersController::class, 'edit']);
 Route::put('/update-data-users/{id}', [UsersController::class, 'update']);
-
+Route::get('ViewsUsers/{id}', [UsersController::class, 'ViewsUsers']);
 // _____________________ Methode Extrauser_______________________________________
 Route::get('/extrauser', [ExtrauserController::class, 'index'])->name("extrauser");
 Route::post('/admin/extrauser/store', [ExtrauserController::class, 'store']);

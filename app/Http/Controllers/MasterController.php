@@ -11,7 +11,7 @@ class MasterController extends Controller
     //
     public function methodelangage(){
         $Langage=Language::all();
-        return view("admin/langage")->with("Langages",$Langage);
+        return view("admin/Languages/langage")->with("Langages",$Langage);
 
     }
     public function store(Request $request){
@@ -61,7 +61,7 @@ class MasterController extends Controller
     }
     public function edit($id){
         $language=Language::find($id);
-        return view("admin/editLangage",compact("language"));
+        return view("admin/Languages/editLangage",compact("language"));
        
     }
     public function update(Request $request,$id){

@@ -13,7 +13,7 @@ class UsersController extends Controller
     {
         // Méthode pour afficher tous les utilisateurs
         $users = User::all();
-        return view('admin/users', compact('users'));
+        return view('admin/Users/users', compact('users'));
     }
 
 
@@ -44,7 +44,7 @@ class UsersController extends Controller
 
     public function edit($id){
         $users=User::find($id);
-        return view("admin/editusers",compact("users"));
+        return view("admin/Users/editusers",compact("users"));
     }
     public function update(Request $request,$id){
         $users=User::find($id);
@@ -66,6 +66,10 @@ class UsersController extends Controller
             echo 'you dont have the permission';
         }      
 }
+
+  public function ViewsUsers($id){
+    $ViewsUsers=User::find($id);
+    return view("admin/Users/viewsusers",compact("ViewsUsers"));
+}
  // ... (other methods)
 }
-

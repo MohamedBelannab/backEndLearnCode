@@ -10,7 +10,7 @@ class BlogsController extends Controller
     //
     public function index(){
         $Blogs=Blogs::all();
-        return view("admin/blogs")->with("blogs",$Blogs);
+        return view("admin/Blogs/blogs")->with("blogs",$Blogs);
 
     }
     public function store(Request $request){
@@ -27,7 +27,7 @@ class BlogsController extends Controller
 
     public function edit($id){
         $blogs=Blogs::find($id);
-        return view("admin/editblogs",compact("blogs"));
+        return view("admin/Blogs/editblogs",compact("blogs"));
     }
     public function update(Request $request,$id){
         $blogs=Blogs::find($id);

@@ -11,7 +11,7 @@ class questionsController extends Controller
 
     public function index(){
         $questions=questions::all();
-        return view("admin/questions")->with("question",$questions);
+        return view("admin/Questions/questions")->with("question",$questions);
     }
 
 
@@ -30,7 +30,7 @@ class questionsController extends Controller
 
     public function edit($id){
         $questions=questions::find($id);
-        return view("admin/editquestions",compact("questions"));
+        return view("admin/Questions/editquestions",compact("questions"));
        
     }
     public function update(Request $request,$id){

@@ -13,7 +13,7 @@ class ExtrauserController extends Controller
     {
         // Méthode pour afficher tous les utilisateurs
         $extrauser = extrauser::all();
-        return view('admin/extrauser', compact('extrauser'));
+        return view('admin/Extrauser/extrauser', compact('extrauser'));
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class ExtrauserController extends Controller
 
     public function edit($id){
         $extrauser=extrauser::find($id);
-        return view("admin/editextrauser",compact("extrauser"));
+        return view("admin/Extrauser/editextrauser",compact("extrauser"));
     }
     public function update(Request $request,$id){
         $extrauser=extrauser::find($id);

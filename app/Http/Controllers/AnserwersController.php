@@ -10,7 +10,7 @@ class AnserwersController extends Controller
     //
     public function index(){
         $anserwers=anserwers::all();
-        return view("admin/anserwers")->with("anserwers",$anserwers);
+        return view("admin/Anserwers/anserwers")->with("anserwers",$anserwers);
 
     }
     public function store(Request $request){
@@ -29,7 +29,7 @@ class AnserwersController extends Controller
 
     public function edit($id){
         $anserwers=anserwers::find($id);
-        return view("admin/editanserwers",compact("anserwers"));
+        return view("admin/Anserwers/editanserwers",compact("anserwers"));
     }
     public function update(Request $request,$id){
         $anserwers=anserwers::find($id);

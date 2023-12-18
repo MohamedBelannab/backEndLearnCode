@@ -13,7 +13,7 @@ class UserresultsController extends Controller
     {
         // Méthode pour afficher tous les utilisateurs
         $userresults = userresults::all();
-        return view('admin/userresults', compact('userresults'));
+        return view('admin/User_Results/userresults', compact('userresults'));
     }
 
     public function store(Request $request)
@@ -36,7 +36,7 @@ class UserresultsController extends Controller
 
     public function edit($id){
         $userresults=userresults::find($id);
-        return view("admin/edituserresults",compact("userresults"));
+        return view("admin/User_Results/edituserresults",compact("userresults"));
     }
     public function update(Request $request,$id){
         $userresults=userresults::find($id);
@@ -44,7 +44,7 @@ class UserresultsController extends Controller
         $userresults->idQuiz=$request->idQuiz;
         $userresults->score=$request->score;
         $userresults->update();
-        return redirect("/users")->with("status","Data updated successfully");
+        return redirect("/userresults")->with("status","Data updated successfully");
     
     }  
 

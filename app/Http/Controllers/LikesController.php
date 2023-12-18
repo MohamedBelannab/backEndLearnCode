@@ -9,7 +9,7 @@ class LikesController extends Controller
 {
     public function index(){
         $Likes=likes::all();
-        return view("admin/likes")->with("likes",$Likes);
+        return view("admin/Likes/likes")->with("likes",$Likes);
 
     }
     public function store(Request $request){
@@ -27,7 +27,7 @@ class LikesController extends Controller
 
     public function edit($id){
         $likes=likes::find($id);
-        return view("admin/editlikes",compact("likes"));
+        return view("admin/Likes/editlikes",compact("likes"));
     }
     public function update(Request $request,$id){
         $likes=likes::find($id);

@@ -20,7 +20,7 @@ class QuizzesController extends Controller
     // }
     public function index(){
         $Quiz=Quiz::all();
-        return view("admin/quiz")->with("Quizes",$Quiz);
+        return view("admin/Quizzes/quiz")->with("Quizes",$Quiz);
     }
 
 
@@ -53,7 +53,7 @@ class QuizzesController extends Controller
 
 public function edit($id){
     $quiz=Quiz::find($id);
-    return view("admin/editQuiz",compact("quiz"));
+    return view("admin/Quizzes/editQuiz",compact("quiz"));
 }
 public function update(Request $request,$id){
     $quiz=Quiz::find($id);
