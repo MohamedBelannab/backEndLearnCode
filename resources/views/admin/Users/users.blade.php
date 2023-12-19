@@ -107,7 +107,7 @@ Page_Users
                 <td>             
                 <a href="{{url('editusers/'.$u->id)}}"  class="btn btn-success" style="margin-right: 10px; margin-bottom: 10px;">Modifier</a>
                 <a onclick="return confirm('vouler-vous vrament suprimer cette quiz')" href="/admin/users/{{$u->id}}/delete" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
-                <a href="{{url('ViewsUsers/'.$u->id)}}"  class="btn btn-primary" style="margin-right: 10px; margin-bottom: 10px;">View_User</a>
+                <!-- <a href="{{url('ViewsUsers/'.$u->id)}}"  class="btn btn-primary" style="margin-right: 10px; margin-bottom: 10px;">View_User</a> -->
                 </td>
               </tr>
             @endforeach
