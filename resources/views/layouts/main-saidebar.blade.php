@@ -44,11 +44,11 @@
             </a>
             <ul class="nav nav-treeview">
 
-            <li class="nav-item">
-              <a href="{{ route('langage') }}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Language </p>
-                </a>
+              <li class="nav-item">
+                <a href="{{ route('langage') }}" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Language </p>
+                  </a>
               </li>
 
               <li class="nav-item">

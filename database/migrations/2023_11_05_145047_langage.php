@@ -18,8 +18,11 @@ return new class extends Migration
             $table->text('example');
             $table->text('Applications');
             $table->text('Guide');
-            $table->text('frameworks');
+            $table->text('slug');
+            $table->text('frameworks')->default(null);
+            $table->text('remarque');
             $table->string('titre');
+            $table->string('playList');
             $table->string('img')->nullable();
             $table->timestamps();
         });

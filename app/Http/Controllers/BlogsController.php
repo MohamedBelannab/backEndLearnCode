@@ -47,5 +47,16 @@ class BlogsController extends Controller
         else{
             echo 'you dont have the permission';
         }      
-}
+    }
+
+    public function getAllBlogs()
+    {
+        $blogs = Blogs::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $blogs,
+            'message' => 'Blogs retrieved successfully',
+        ]);
+    }
 }

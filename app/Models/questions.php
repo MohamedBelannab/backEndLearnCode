@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\anserwers;
 
 class questions extends Model
 {
@@ -16,8 +17,8 @@ class questions extends Model
         'bodyQuestion',
     ];
 
-    public function Quizquestions()
+    public function answers()
     {
-        return $this->belongsTo(Quiz::class, 'idQuiz');
+        return $this->hasMany(anserwers::class , 'idQuestion');
     }
 }

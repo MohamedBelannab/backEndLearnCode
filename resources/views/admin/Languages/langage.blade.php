@@ -92,6 +92,13 @@ Page_Langage
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+    <div class="form-group">
+      <label for="playList">playList:</label>
+      <input name="playList" type="text" class="form-control" id="playList" placeholder="Enter playList">
+      @error('playList')
+          <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+    </div>
 
     <div class="form-group">
     <label for="img">Image:</label>
@@ -136,6 +143,7 @@ Page_Langage
                 <th>Applications</th>
                 <th>Guide</th>
                 <th>Frameworks</th>
+                <th>playList</th>
                 <th>img</th>
                 <th>Action</th>
               </tr>
@@ -152,6 +160,7 @@ Page_Langage
                 <td>{{$La->Applications}}</td>
                 <td>{{$La->Guide}}</td>
                 <td>{{$La->frameworks}}</td>
+                <td>{{$La->playList}}</td>
                 <td> 
                 <img src="{{ asset('uploads/langage/' . $La->img) }}" alt="Post Image" style="width: 70px; height: auto;">
                 </td>
