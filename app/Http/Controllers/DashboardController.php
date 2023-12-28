@@ -19,6 +19,5 @@ class DashboardController extends Controller
      $anserwers = anserwers::count();
     return view('/Welcome', compact('userCount','languageCount','blogs','anserwers'));
 }
-
-
 }
+
