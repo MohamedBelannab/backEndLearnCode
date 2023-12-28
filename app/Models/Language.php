@@ -10,4 +10,9 @@ class Language extends Model
     use HasFactory;
     protected $table = 'langages' ;
     protected $guarded = [];
+
+    public function quiz()
+    {
+        return $this->hasOne(Quiz::class , 'idLangage');
+    }
 }

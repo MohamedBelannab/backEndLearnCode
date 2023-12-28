@@ -91,13 +91,13 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
       <label for="playList">playList:</label>
       <input name="playList" type="text" class="form-control" id="playList" placeholder="Enter playList">
       @error('playList')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
-    </div> -->
+    </div>
 
     <div class="form-group">
     <label for="img">Image:</label>

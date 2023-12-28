@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\questions;
 
 class Quiz extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
-    public function QuizLanguage()
+    public function question() 
     {
-        return $this->belongsTo(Language::class, 'idLangage');
+        return $this->hasMany(questions::class  , 'idQuiz');
+
     }
 
     public function userResults()

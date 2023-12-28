@@ -28,7 +28,7 @@ Dashboard
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>{{$userCount}}</h3>
+                {{-- <h3>{{$userCount}}</h3> --}}
                 <p>Count_Uerss</p>
               </div>
               <div class="icon">
@@ -45,7 +45,7 @@ Dashboard
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{$languageCount}}<sup style="font-size: 20px"></sup></h3>
+                {{-- <h3>{{$languageCount}}<sup style="font-size: 20px"></sup></h3> --}}
 
                 <p>Count_Language</p>
               </div>
@@ -61,7 +61,7 @@ Dashboard
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{$blogs}}</h3>
+                {{-- <h3>{{$blogs}}</h3> --}}
 
                 <p>Count_Blogs</p>
               </div>
@@ -76,7 +76,7 @@ Dashboard
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{$anserwers}}</h3>
+                {{-- <h3>{{$anserwers}}</h3> --}}
 
                 <p>Count_Anserwers</p>
               </div>

@@ -22,6 +22,7 @@ class MasterController extends Controller
             'example' => 'required|string',
             'Applications' => 'required|string',
             'Guide' => 'required|string',
+            'playList' => 'required|string' ,
             'frameworks' => 'required|string',
             'titre' => 'required|string',
             'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -35,6 +36,7 @@ class MasterController extends Controller
         $Langage->Guide=$request->Guide;
         $Langage->frameworks=$request->frameworks;
         $Langage->titre=$request->titre;
+        $Langage->playList=$request->playList;
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $extension = $file->getClientOriginalExtension();
