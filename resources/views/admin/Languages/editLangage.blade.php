@@ -47,52 +47,68 @@ Modifier Langages
     <div class="form-group">
         <label for="description">Description:</label>
         <textarea  value="{{$language->description}}" name="description" class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
-        <!-- @error('description')
+        @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
     <div class="form-group">
         <label for="titre">WhyLearn:</label>
         <input value="{{$language->WhyLearn}}" name="WhyLearn" type="text" class="form-control" id="titre" placeholder="Enter WhyLearn">
-        <!-- @error('titre')
+        @error('WhyLearn')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
     <div class="form-group">
         <label for="titre">example:</label>
         <input value="{{$language->example}}" name="example" type="text" class="form-control" id="titre" placeholder="Enter example">
-        <!-- @error('titre')
+        @error('example')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
 
     <div class="form-group">
         <label for="titre">Applications:</label>
         <input value="{{$language->Applications}}" name="Applications" type="text" class="form-control" id="titre" placeholder="Enter Applications">
-        <!-- @error('titre')
+        @error('Applications')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
     <div class="form-group">
         <label for="titre">Guide:</label>
         <input value="{{$language->Guide}}" name="Guide" type="Guide" class="form-control" id="titre" placeholder="Enter Guide">
-        <!-- @error('titre')
+        @error('Guide')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
+    </div>
+    <div class="form-group">
+        <label for="slug">slug:</label>
+        <input value="{{$language->slug}}" name="slug" type="text" class="form-control" id="slug" placeholder="Enter slug">
+        @error('slug')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div class="form-group">
         <label for="titre">frameworks:</label>
         <input value="{{$language->frameworks}}" name="frameworks" type="text" class="form-control" id="titre" placeholder="Enter frameworks">
-        <!-- @error('titre')
+        @error('frameworks')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
+
+    <div class="form-group">
+        <label for="remarque">remarque:</label>
+        <input value="{{$language->remarque}}" name="remarque" type="text" class="form-control" id="frameworks" placeholder="Enter remarque">
+        @error('remarque')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
     <div class="form-group">
         <label for="titre">Titre:</label>
         <input value="{{$language->titre}}" name="titre" type="text" class="form-control" id="titre" placeholder="Enter Title">
-        <!-- @error('titre')
+        @error('Titre')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror -->
+        @enderror
     </div>
 
     <div class="form-group">
@@ -102,6 +118,14 @@ Modifier Langages
         @error('img')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+    </div>
+
+    <div class="form-group">
+      <label for="playList">playList:</label>
+      <input  value="{{$language->playList}}" name="playList" type="text" class="form-control" id="playList" placeholder="Enter playList">
+      @error('playList')
+          <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
     </div>
 
     <div class="modal-footer">

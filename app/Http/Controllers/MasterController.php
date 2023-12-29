@@ -34,7 +34,10 @@ class MasterController extends Controller
         $Langage->example=$request->example;
         $Langage->Applications=$request->Applications;
         $Langage->Guide=$request->Guide;
+        $Langage->slug=$request->slug;
         $Langage->frameworks=$request->frameworks;
+        $Langage->remarque=$request->remarque;
+        $Langage->playList=$request->playList;
         $Langage->titre=$request->titre;
         $Langage->playList=$request->playList;
         if ($request->hasFile('img')) {
@@ -73,7 +76,10 @@ class MasterController extends Controller
         $Langage->example=$request->example;
         $Langage->Applications=$request->Applications;
         $Langage->Guide=$request->Guide;
+        $Langage->slug=$request->slug;
         $Langage->frameworks=$request->frameworks;
+        $Langage->remarque=$request->remarque;
+        $Langage->playList=$request->playList;
         $Langage->titre=$request->titre;
         if ($request->hasFile('img')) {
             $file = $request->file('img');
