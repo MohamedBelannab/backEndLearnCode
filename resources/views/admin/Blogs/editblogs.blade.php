@@ -39,12 +39,13 @@ Modifier Blogs
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-        <form action="{{url('update-data-blogs/'.$blogs->id)}}" method="post">      
+        <form action="{{url('update-data-blogs/'.$blogs->id)}}" method="post" enctype="multipart/form-data">      
     @csrf
-    @method("PUT")
+    {{ csrf_field() }}
+    {{method_field('PUT')}}
     <div class="form-group">
         <label for="content">content:</label>
-        <input name="content" type="text" class="form-control" id="titre" placeholder="Enter content">
+        <input value="{{$blogs->content}}" name="content" type="text" class="form-control" id="titre" placeholder="Enter content">
         @error('content')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -52,8 +53,33 @@ Modifier Blogs
     
     <div class="form-group">
         <label for="title">title:</label>
-        <input name="title" type="text" class="form-control" id="titre" placeholder="Enter Title">
+        <input value="{{$blogs->title}}" name="title" type="text" class="form-control" id="titre" placeholder="Enter Title">
         @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+    <label for="img">Image:</label>
+    <input src="{{$blogs->img}}" type="file" id="img" name="img" class="form-control">
+        @error('img')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    
+
+    <div class="form-group">
+        <label for="remarque">remarque:</label>
+        <input value="{{$blogs->remarque}}" name="remarque" type="text" class="form-control" id="frameworks" placeholder="Enter remarque">
+        @error('remarque')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label for="slug">slug:</label>
+        <input value="{{$blogs->slug}}" name="slug" type="text" class="form-control" id="slug" placeholder="Enter slug">
+        @error('slug')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>

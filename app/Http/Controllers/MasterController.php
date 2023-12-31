@@ -15,7 +15,6 @@ class MasterController extends Controller
 
     }
     public function store(Request $request){
-        
         $request->validate([
             'description' => 'required|string',
             'WhyLearn' => 'required|string',
@@ -54,7 +53,6 @@ class MasterController extends Controller
         $Langage->save();
         return redirect()->back()->with('success', 'Langage added successfully');
     }
-
     public function removeLanguage($id ){
             $language = Language::find($id);
             if($language){

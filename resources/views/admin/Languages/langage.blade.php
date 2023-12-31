@@ -99,6 +99,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+
     <div class="form-group">
         <label for="remarque">remarque:</label>
         <input name="remarque" type="text" class="form-control" id="frameworks" placeholder="Enter remarque">
@@ -106,6 +107,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+
     <div class="form-group">
       <label for="playList">playList:</label>
       <input name="playList" type="text" class="form-control" id="playList" placeholder="Enter playList">

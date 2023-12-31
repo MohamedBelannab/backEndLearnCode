@@ -46,7 +46,7 @@ Modifier Langages
     <!-- @method("PUT") -->
     <div class="form-group">
         <label for="description">Description:</label>
-        <textarea  value="{{$language->description}}" name="description" class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
+        <textarea  name="description" class="form-control" id="description" rows="3" placeholder="Enter Description">{{$language->description}}</textarea>
         @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

@@ -42,8 +42,9 @@ Page_Blogs
       </div>
       <div class="modal-body">
         <!-- Form to capture id, idLangage, description, and titre -->
-        <form action="/admin/blogs/store" method="post">
-    @csrf
+        <form action="/admin/blogs/store" method="post"  enctype="multipart/form-data">
+        @csrf
+    {{ csrf_field() }}
     <div class="form-group">
         <label for="content">content:</label>
         <input name="content" type="text" class="form-control" id="titre" placeholder="Enter content">
@@ -51,10 +52,36 @@ Page_Blogs
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+
     <div class="form-group">
         <label for="title">title:</label>
         <input name="title" type="text" class="form-control" id="titre" placeholder="Enter Title">
         @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label for="remarque">remarque:</label>
+        <input name="remarque" type="text" class="form-control" id="frameworks" placeholder="Enter remarque">
+        @error('remarque')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label for="slug">slug:</label>
+        <input name="slug" type="text" class="form-control" id="slug" placeholder="Enter slug">
+        @error('slug')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    
+    <div class="form-group">
+    <label for="img">Image:</label>
+    <input type="file" id="img" name="img" class="form-control">
+        @error('img')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
@@ -64,15 +91,10 @@ Page_Blogs
         <button type="submit" class="btn btn-primary">Save changes</button>
     </div>
 </form>
-
-
       </div>
-
     </div>
   </div>
 </div>
-
-
 <section class="content">
   <div class="row">
     <div class="col-12">
@@ -83,12 +105,14 @@ Page_Blogs
         <!-- /.card-header -->
         <div class="card-body">
           <table id="example2" class="table table-bordered table-hover">
-
             <thead>
             <tr>
                             <th>#</th>
                             <th>content</th>
                             <th>title</th>
+                            <th>img</th>
+                            <th>remarque</th>
+                            <th>slug</th>
                             <th>Action</th>
                           </tr>
             </thead>
@@ -98,13 +122,17 @@ Page_Blogs
                             <td>{{$b->id}}</td>
                             <td>{{$b->content}}</td>
                             <td>{{$b->title}}</td>
+                            <td> 
+                            <img src="{{ asset('uploads_blogs/blogs/' . $b->img) }}" alt="Post Image" style="width: 70px; height: auto;">
+                                          </td>
+                <td>{{$b->remarque}}</td>
+                <td>{{$b->slug}}</td>
                 <td>
                 <a href="{{url('editblogs/'.$b->id)}}" class="btn btn-success" style="margin-right: 10px; margin-bottom: 10px;">Modifier</a>
-                <a onclick="return confirm('vouler-vous vrament suprimer cette quiz')" href="/admin/blogs/{{$b->id}}/delete" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
-
+                <a onclick="return confirm('vouler-vous vrament suprimer cette blogs')" href="/admin/blogs/{{$b->id}}/delete" class="btn btn-danger" style="margin-right: 10px; margin-bottom: 10px;">Supprimer</a>
                 </td>
-                          </tr>
-                          @endforeach
+                </tr>
+                @endforeach
               <!-- Add more rows as needed -->
             </tbody>
           </table>
