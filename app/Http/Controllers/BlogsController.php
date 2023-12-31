@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
+use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 
 class BlogsController extends Controller
 {
-    //
+    use HttpResponses;
     public function index(){
         $Blogs=Blogs::all();
         return view("admin/Blogs/blogs")->with("blogs",$Blogs);
@@ -58,5 +59,12 @@ class BlogsController extends Controller
             'data' => $blogs,
             'message' => 'Blogs retrieved successfully',
         ]);
+    }
+
+    public function Blog($slug)
+    {
+        $blogs = Blogs::where('slug',$slug)->first();
+
+        return $this->success($blogs);
     }
 }

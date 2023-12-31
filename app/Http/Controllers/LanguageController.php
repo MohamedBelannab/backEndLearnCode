@@ -28,7 +28,9 @@ class LanguageController extends Controller
 
         }])->first() ;
 
-        // return $quiz ;
+        if(is_null($quiz->quiz)){
+            return $this->success([] ,'No Quiz') ;
+        }
         return $this->success(resQuiz::collection([$quiz]) ,'Quiz') ;
     }
 

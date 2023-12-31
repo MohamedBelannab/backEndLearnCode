@@ -37,6 +37,7 @@ class MasterController extends Controller
         $Langage->frameworks=$request->frameworks;
         $Langage->titre=$request->titre;
         $Langage->playList=$request->playList;
+        $Langage->slug = uniqid();
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $extension = $file->getClientOriginalExtension();

@@ -21,14 +21,7 @@ class QuizzesSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
 
-            ],
-            [
-                'idLangage'=> 3,
-                'description' => 'Test your knowledge of JavaScript programming with this quiz. ',
-                'titre' => 'JavaScript',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ] 
+            ]
         ]);
 
         DB::table('questions')->insert([
