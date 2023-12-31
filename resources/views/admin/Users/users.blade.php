@@ -49,7 +49,7 @@ Page_Users
         <label for="name">name:</label>
         <input name="name" type="text" class="form-control" id="titre" placeholder="Enter name">
         @error('name')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger">{{$message }}</div>
         @enderror
     </div>
     <div class="form-group">

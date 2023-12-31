@@ -6,18 +6,16 @@
 
 @endsection
 
- 
 @section('css')
+<link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/demo_1/style.css')}}">
+<link rel="stylesheet" href="{{asset('assets/images/favicon.png')}}">
 @endsection
 
 @section('title_page1')
-<a href="{{ url('/') }}" class="d-block">Home</a>
- 
-@endsection
 
-
-@section('title_page2')
-Page_Langage
 @endsection
 
 @section('Content')
@@ -85,10 +83,26 @@ Page_Langage
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+
+    <div class="form-group">
+        <label for="slug">slug:</label>
+        <input name="slug" type="text" class="form-control" id="slug" placeholder="Enter slug">
+        @error('slug')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
     <div class="form-group">
         <label for="frameworks">frameworks:</label>
         <input name="frameworks" type="text" class="form-control" id="frameworks" placeholder="Enter frameworks">
         @error('frameworks')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="form-group">
+        <label for="remarque">remarque:</label>
+        <input name="remarque" type="text" class="form-control" id="frameworks" placeholder="Enter remarque">
+        @error('remarque')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
@@ -103,12 +117,10 @@ Page_Langage
     <div class="form-group">
     <label for="img">Image:</label>
     <input type="file" id="img" name="img" class="form-control">
-
         @error('img')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-
 
 
     <div class="modal-footer">
@@ -122,19 +134,21 @@ Page_Langage
   </div>
 </div>
 
-<section class="content">
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">DataTable Langages</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <table id="example2" class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <!-- <th>Index</th>
+
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title"> table</h4>
+                    <p class="card-description"> <code>.DataTable Langages</code>
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <!-- <th>#</th> -->
+                        <!-- <th>Index</th>
                 <th>ID </th> -->
                 <th>Titre</th>
                 <th>Description</th>
@@ -142,24 +156,28 @@ Page_Langage
                 <th>example</th>
                 <th>Applications</th>
                 <th>Guide</th>
+                <th>slug</th>
                 <th>Frameworks</th>
+                <th>remarque</th>
                 <th>playList</th>
                 <th>img</th>
                 <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-            @foreach($Langages as $index =>$La)
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($Langages as $index =>$La)
               <tr>
-                <!-- <td>{{$index}}</td>
-                <td>{{$La->id}}</td> -->
+                <!--  <td>{{$index}}</td> -->
+                <!-- <td>{{$La->id}}</td>  -->
                 <td>{{$La->titre}}</td>
                 <td>{{$La->description}}</td>
                 <td>{{$La->WhyLearn}}</td>
                 <td>{{$La->example}}</td>
                 <td>{{$La->Applications}}</td>
                 <td>{{$La->Guide}}</td>
+                <td>{{$La->slug}}</td>
                 <td>{{$La->frameworks}}</td>
+                <td>{{$La->remarque}}</td>
                 <td>{{$La->playList}}</td>
                 <td> 
                 <img src="{{ asset('uploads/langage/' . $La->img) }}" alt="Post Image" style="width: 70px; height: auto;">
@@ -171,28 +189,22 @@ Page_Langage
                 </td>
               </tr>
             @endforeach
-              <!-- Add more rows as needed -->
-            </tbody>
-          </table>
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-    </div>
-    <!-- /.col -->
-  </div>
-  <!-- /.row -->
-</section>
-<!-- /.content -->
-
-
-
-
-
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 @endsection
 
 
-@section('scripts')
 
+@section('scripts')
+<script type="text/javascript" src="{{URL::asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/off-canvas.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/hoverable-collapse.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/misc.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/settings.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/todolist.js')}}"></script>
 @endsection
